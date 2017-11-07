@@ -24,11 +24,19 @@ export default class Index extends Component {
       <Page>
         {stories.map(story =>
           <div>
-            <span>{story.title}</span>
+            <span>{story.title}
             <style jsx>{`
               font-weight: bold;
-              font-size: larger;`
-            }</style>
+              font-size: larger;
+            `}</style>
+            </span>
+            <div>
+              <span>{story.by}
+              <style jsx>{`
+                font-size: smaller;
+              `}</style>
+              </span>
+            </div>
           </div>
         )}
       </Page>
