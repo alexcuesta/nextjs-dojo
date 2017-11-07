@@ -22,7 +22,15 @@ export default class Index extends Component {
     const {stories} = this.props
     return (
       <Page>
-        {stories.map(story => <div>{story.title}</div>)}
+        {stories.map(story =>
+          <div>
+            <span>{story.title}</span>
+            <style jsx>{`
+              font-weight: bold;
+              font-size: larger;`
+            }</style>
+          </div>
+        )}
       </Page>
     )
   }
