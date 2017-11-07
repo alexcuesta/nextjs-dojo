@@ -1,6 +1,7 @@
 import {Component} from 'react'
 import Page from '../components/Page'
 import fetch from 'isomorphic-fetch'
+import Link from 'next/link'
 
 export default class Index extends Component {
 
@@ -24,19 +25,23 @@ export default class Index extends Component {
       <Page>
         {stories.map(story =>
           <div>
+
             <span>{story.title}
             <style jsx>{`
               font-weight: bold;
               font-size: larger;
             `}</style>
             </span>
+
             <div>
+              <Link prefetch href={{pathname: 'item', query: {id: story.id} }}><a>More!</a></Link>
               <span>{story.by}
               <style jsx>{`
                 font-size: smaller;
               `}</style>
               </span>
             </div>
+
           </div>
         )}
       </Page>
